@@ -1,0 +1,32 @@
+<ion-content color="primary" class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <ion-grid>
+      <ion-row color="primary" class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h3>Login</h3>
+          </div>
+          <div class="ion-padding">
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="your@email.com" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" formControlName="password"></ion-input>
+            </ion-item>
+          </div>
+          <div class="ion-padding">
+            <ion-button size="large" type="submit" expand="block" [disabled]="form.invalid">Login</ion-button>
+          </div>
+          <ion-button expand="block" type="button" color="danger" size="large" (click)="nativeGoogleLogin()">Google</ion-button>
+          <ion-button expand="block" type="button" color="medium" size="large" (click)="fbLogin()">FaceBook</ion-button>
+          <ion-row>
+            <div class="ion-text-center">
+            If you don't have an account, please <a routerLink='/auth/register'>
+            register</a> first!
+            </div>
+        </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
